@@ -1,0 +1,23 @@
+package factoryblocks.common;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.event.RegistryEvent.Register;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+public class EventBusFactoryBlocks {
+
+  @SubscribeEvent
+  public void registerBlocks(Register<Block> event) {
+  }
+
+  @SubscribeEvent
+  public void registerItems(Register<Item> event) {
+  }
+
+  @SubscribeEvent
+  public final void registerModels(ModelRegistryEvent event) {
+  }
+
+}
