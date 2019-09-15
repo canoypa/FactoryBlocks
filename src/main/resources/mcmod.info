@@ -1,0 +1,10 @@
+[
+  {
+    "modid": "factoryblocks",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "name": "Factory Blocks",
+    "description": "Added building material blocks that can be used in factories, etc.",
+    "authorList": ["canoypa"]
+  }
+]
