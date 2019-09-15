@@ -1,5 +1,6 @@
 package factoryblocks.blocks;
 
+import factoryblocks.blocks.tile.TileCatwalks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -18,7 +19,7 @@ public class Catwalks extends BlockContainer {
 
   @Override
   public TileEntity createNewTileEntity(World world, int meta) {
-    return null;
+    return new TileCatwalks();
   }
 
   @Override
