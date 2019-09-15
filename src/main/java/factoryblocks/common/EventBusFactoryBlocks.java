@@ -1,5 +1,6 @@
 package factoryblocks.common;
 
+import factoryblocks.client.ModelRegistrationHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -18,6 +19,8 @@ public class EventBusFactoryBlocks {
 
   @SubscribeEvent
   public final void registerModels(ModelRegistryEvent event) {
+    ModelRegistrationHandler.registerBlockModels();
+    ModelRegistrationHandler.registerItemModels();
   }
 
 }
