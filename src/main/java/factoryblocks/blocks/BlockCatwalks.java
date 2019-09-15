@@ -9,9 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.world.World;
 
-public class Catwalks extends BlockContainer {
+public class BlockCatwalks extends BlockContainer {
 
-  public Catwalks() {
+  public BlockCatwalks() {
     super(Material.IRON);
 
     setSoundType(SoundType.STONE);
