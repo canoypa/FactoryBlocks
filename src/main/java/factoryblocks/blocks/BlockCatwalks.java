@@ -27,6 +27,10 @@ public class BlockCatwalks extends Block {
   private static final PropertyBool East = PropertyBool.create("east");
   private static final PropertyBool South = PropertyBool.create("south");
   private static final PropertyBool West = PropertyBool.create("west");
+  private static final PropertyBool AscendingNorth = PropertyBool.create("ascendingNorth");
+  private static final PropertyBool AscendingEast = PropertyBool.create("ascendingEast");
+  private static final PropertyBool AscendingSouth = PropertyBool.create("ascendingSouth");
+  private static final PropertyBool AscendingWest = PropertyBool.create("ascendingWest");
 
   public BlockCatwalks() {
     super(Material.IRON);
@@ -90,7 +94,8 @@ public class BlockCatwalks extends Block {
 
   @Override
   protected BlockStateContainer createBlockState() {
-    return new BlockStateContainer(this, new IProperty[] { North, East, West, South });
+    return new BlockStateContainer(this,
+        new IProperty[] { North, East, West, South, AscendingNorth, AscendingEast, AscendingSouth, AscendingWest });
   }
 
 }
