@@ -1,6 +1,7 @@
 
 package factoryblocks.client;
 
+import factoryblocks.common.FactoryBlocksBlocks;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -16,6 +17,7 @@ public final class ModelRegistrationHandler {
   }
 
   public static final void registerBlockModels() {
+    registerModel(Item.getItemFromBlock(FactoryBlocksBlocks.catwalks), 0);
   }
 
   public static final void registerItemModels() {
