@@ -27,11 +27,11 @@ public class FactoryBlocks {
 
   @EventHandler
   public void preInit(FMLPreInitializationEvent event) {
+    MinecraftForge.EVENT_BUS.register(new EventBusFactoryBlocks());
   }
 
   @EventHandler
   public void init(FMLInitializationEvent event) {
-    MinecraftForge.EVENT_BUS.register(new EventBusFactoryBlocks());
   }
 
   @EventHandler
