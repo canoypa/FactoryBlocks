@@ -42,29 +42,22 @@ public class BlockCatwalks extends Block {
   }
 
   @Override
-  public void onBlockAdded(World world, BlockPos pos, IBlockState blockState) {
-    IBlockState state = this.getDefaultState();
-    IBlockState stateNorth = world.getBlockState(pos.north());
-    IBlockState stateEast = world.getBlockState(pos.east());
-    IBlockState stateSouth = world.getBlockState(pos.south());
-    IBlockState stateWest = world.getBlockState(pos.west());
+  public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+    Block blockNorth = world.getBlockState(pos.north()).getBlock();
+    Block blockEast = world.getBlockState(pos.east()).getBlock();
+    Block blockSouth = world.getBlockState(pos.south()).getBlock();
+    Block blockWest = world.getBlockState(pos.west()).getBlock();
 
-    if (stateNorth.getBlock() == this) {
-      state = state.withProperty(North, true);
-    }
-    if (stateEast.getBlock() == this) {
-      state = state.withProperty(East, true);
-    }
-    if (stateSouth.getBlock() == this) {
-      state = state.withProperty(South, true);
-    }
-    if (stateWest.getBlock() == this) {
-      state = state.withProperty(West, true);
-    }
+    state = state.withProperty(North, this.isCatwalks(blockNorth)).withProperty(East, this.isCatwalks(blockEast))
+        .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest));
 
     world.setBlockState(pos, state);
 
-    super.onBlockAdded(world, pos, blockState);
+    super.onBlockAdded(world, pos, state);
+  }
+
+  private boolean isCatwalks(Block block) {
+    return block == this;
   }
 
   @Override
