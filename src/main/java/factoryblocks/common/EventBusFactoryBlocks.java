@@ -11,6 +11,7 @@ public class EventBusFactoryBlocks {
 
   @SubscribeEvent
   public void registerBlocks(Register<Block> event) {
+    FactoryBlocksBlocks.registerBlocks(event.getRegistry());
   }
 
   @SubscribeEvent
