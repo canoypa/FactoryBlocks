@@ -1,0 +1,10 @@
+{
+  "multipart": [
+    { "apply": { "model": "factoryblocks:catwalks_footing" } },
+
+    { "when": { "north": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "uvlock": true } },
+    { "when": { "east": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 90, "uvlock": true } },
+    { "when": { "south": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 180, "uvlock": true } },
+    { "when": { "west": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 270, "uvlock": true } }
+  ]
+}
