@@ -27,10 +27,10 @@ public class BlockCatwalks extends Block {
   private static final PropertyBool East = PropertyBool.create("east");
   private static final PropertyBool South = PropertyBool.create("south");
   private static final PropertyBool West = PropertyBool.create("west");
-  private static final PropertyBool AscendingNorth = PropertyBool.create("ascendingNorth");
-  private static final PropertyBool AscendingEast = PropertyBool.create("ascendingEast");
-  private static final PropertyBool AscendingSouth = PropertyBool.create("ascendingSouth");
-  private static final PropertyBool AscendingWest = PropertyBool.create("ascendingWest");
+  private static final PropertyBool AscendingNorth = PropertyBool.create("ascending_worth");
+  private static final PropertyBool AscendingEast = PropertyBool.create("ascending_wast");
+  private static final PropertyBool AscendingSouth = PropertyBool.create("ascending_wouth");
+  private static final PropertyBool AscendingWest = PropertyBool.create("ascending_west");
 
   public BlockCatwalks() {
     super(Material.IRON);
