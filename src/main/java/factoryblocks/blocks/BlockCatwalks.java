@@ -37,8 +37,11 @@ public class BlockCatwalks extends Block {
 
     setSoundType(SoundType.STONE);
 
-    this.setDefaultState(this.blockState.getBaseState().withProperty(North, false).withProperty(East, false)
-        .withProperty(South, false).withProperty(West, false));
+    IBlockState defaultState = this.blockState.getBaseState().withProperty(North, false).withProperty(East, false)
+        .withProperty(South, false).withProperty(West, false).withProperty(AscendingNorth, false)
+        .withProperty(AscendingEast, false).withProperty(AscendingSouth, false).withProperty(AscendingWest, false);
+
+    this.setDefaultState(defaultState);
   }
 
   @Override
