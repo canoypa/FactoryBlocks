@@ -84,11 +84,6 @@ public class BlockCatwalks extends Block {
   }
 
   @Override
-  public IBlockState getStateFromMeta(int meta) {
-    return this.getDefaultState();
-  }
-
-  @Override
   protected BlockStateContainer createBlockState() {
     return new BlockStateContainer(this,
         new IProperty[] { North, East, West, South, AscendingNorth, AscendingEast, AscendingSouth, AscendingWest });
