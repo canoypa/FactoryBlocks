@@ -2,14 +2,14 @@ package factoryblocks.util;
 
 import net.minecraft.util.math.AxisAlignedBB;
 
-public class HitBox {
+public class AxisAligned {
 
-  public static final AxisAlignedBB createHitBox(int positionX, int positionY, int positionZ, int sizeX, int sizeY,
+  public static final AxisAlignedBB create(int positionX, int positionY, int positionZ, int sizeX, int sizeY,
       int sizeZ) {
 
     double x1 = (double) positionX / 16;
-    double y1 = (double) positionX / 16;
-    double z1 = (double) positionX / 16;
+    double y1 = (double) positionY / 16;
+    double z1 = (double) positionZ / 16;
     double x2 = (double) sizeX / 16 + x1;
     double y2 = (double) sizeY / 16 + y1;
     double z2 = (double) sizeZ / 16 + z1;
