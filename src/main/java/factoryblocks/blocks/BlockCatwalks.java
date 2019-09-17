@@ -15,14 +15,17 @@ import net.minecraft.world.World;
 
 public class BlockCatwalks extends Block {
 
+  // ホバー時のやつのサイズ
   protected static final AxisAlignedBB BoundingBoxs = AxisAligned.create(0, 0, 0, 16, 16, 16);
 
+  // 当たり判定のサイズ
   private static final AxisAlignedBB MainHitBox = AxisAligned.create(0, 0, 0, 16, 1, 16);
   private static final AxisAlignedBB NorthHitBox = AxisAligned.create(0, 0, 0, 16, 20, 1);
   private static final AxisAlignedBB EastHitBox = AxisAligned.create(15, 0, 0, 1, 20, 16);
   private static final AxisAlignedBB SouthHitBox = AxisAligned.create(0, 0, 15, 16, 20, 1);
   private static final AxisAlignedBB WestHitBox = AxisAligned.create(0, 0, 0, 1, 20, 16);
 
+  // ブロックのステータスプロパティ
   private static final PropertyBool North = PropertyBool.create("north");
   private static final PropertyBool East = PropertyBool.create("east");
   private static final PropertyBool South = PropertyBool.create("south");
@@ -44,6 +47,7 @@ public class BlockCatwalks extends Block {
     this.setDefaultState(defaultState);
   }
 
+  // ブロック設置時
   @Override
   public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
     Block blockNorth = world.getBlockState(pos.north()).getBlock();
@@ -59,6 +63,7 @@ public class BlockCatwalks extends Block {
     super.onBlockAdded(world, pos, state);
   }
 
+  // ブロックが catwalks かどうか
   private boolean isCatwalks(Block block) {
     return block == this;
   }
@@ -68,11 +73,13 @@ public class BlockCatwalks extends Block {
     return false;
   }
 
+  // 当たり判定のやつ
   @Override
   public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
     return MainHitBox;
   }
 
+  // ホバー時のあれのやつ
   @Override
   public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
     return BoundingBoxs;
@@ -83,6 +90,7 @@ public class BlockCatwalks extends Block {
     return 0;
   }
 
+  // blockstate
   @Override
   protected BlockStateContainer createBlockState() {
     return new BlockStateContainer(this,
