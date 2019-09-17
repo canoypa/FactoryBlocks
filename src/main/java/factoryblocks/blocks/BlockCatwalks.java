@@ -70,7 +70,6 @@ public class BlockCatwalks extends Block {
 
     return state.withProperty(North, this.isCatwalks(blockNorth)).withProperty(East, this.isCatwalks(blockEast))
         .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest));
-
   }
 
   @Override
