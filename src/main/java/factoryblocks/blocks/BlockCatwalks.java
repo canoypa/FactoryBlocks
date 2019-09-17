@@ -47,6 +47,11 @@ public class BlockCatwalks extends Block {
     this.setDefaultState(defaultState);
   }
 
+  // ブロックが catwalks かどうか
+  private boolean isCatwalks(Block block) {
+    return block == this;
+  }
+
   // ブロック設置時
   @Override
   public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
@@ -66,11 +71,6 @@ public class BlockCatwalks extends Block {
     return state.withProperty(North, this.isCatwalks(blockNorth)).withProperty(East, this.isCatwalks(blockEast))
         .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest));
 
-  }
-
-  // ブロックが catwalks かどうか
-  private boolean isCatwalks(Block block) {
-    return block == this;
   }
 
   @Override
