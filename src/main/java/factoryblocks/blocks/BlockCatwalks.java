@@ -77,6 +77,11 @@ public class BlockCatwalks extends Block {
     return false;
   }
 
+  @Override
+  public boolean isOpaqueCube(IBlockState state) {
+    return false;
+  }
+
   // 当たり判定のやつ
   @Override
   public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
