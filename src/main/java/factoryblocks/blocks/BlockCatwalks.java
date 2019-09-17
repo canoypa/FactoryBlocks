@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 public class BlockCatwalks extends Block {
 
   // ホバー時のやつのサイズ
-  protected static final AxisAlignedBB BoundingBoxs = AxisAligned.create(0, 0, 0, 16, 16, 16);
+  protected static final AxisAlignedBB BoundingBox = AxisAligned.create(0, 0, 0, 16, 16, 16);
 
   // 当たり判定のサイズ
   private static final AxisAlignedBB MainHitBox = AxisAligned.create(0, 0, 0, 16, 1, 16);
@@ -91,7 +91,7 @@ public class BlockCatwalks extends Block {
   // ホバー時のあれのやつ
   @Override
   public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-    return BoundingBoxs;
+    return BoundingBox;
   }
 
   @Override
