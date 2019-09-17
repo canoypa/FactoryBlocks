@@ -50,17 +50,22 @@ public class BlockCatwalks extends Block {
   // ブロック設置時
   @Override
   public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+    world.setBlockState(pos, this.getActualState(state, world, pos));
+
+    super.onBlockAdded(world, pos, state);
+  }
+
+  // チャンク読み込み時のブロック処理で呼ばれる？ ブロックの状態を取得するメソッド
+  @Override
+  public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
     Block blockNorth = world.getBlockState(pos.north()).getBlock();
     Block blockEast = world.getBlockState(pos.east()).getBlock();
     Block blockSouth = world.getBlockState(pos.south()).getBlock();
     Block blockWest = world.getBlockState(pos.west()).getBlock();
 
-    state = state.withProperty(North, this.isCatwalks(blockNorth)).withProperty(East, this.isCatwalks(blockEast))
+    return state.withProperty(North, this.isCatwalks(blockNorth)).withProperty(East, this.isCatwalks(blockEast))
         .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest));
 
-    world.setBlockState(pos, state);
-
-    super.onBlockAdded(world, pos, state);
   }
 
   // ブロックが catwalks かどうか
