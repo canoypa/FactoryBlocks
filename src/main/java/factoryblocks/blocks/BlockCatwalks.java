@@ -2,8 +2,6 @@ package factoryblocks.blocks;
 
 import factoryblocks.util.AxisAligned;
 import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
@@ -13,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockCatwalks extends Block {
+public class BlockCatwalks extends BlockCatwalksBase {
 
   // ホバー時のやつのサイズ
   protected static final AxisAlignedBB BoundingBox = AxisAligned.create(0, 0, 0, 16, 2, 16);
@@ -32,9 +30,7 @@ public class BlockCatwalks extends Block {
   private static final PropertyBool West = PropertyBool.create("west");
 
   public BlockCatwalks() {
-    super(Material.IRON);
-
-    setSoundType(SoundType.STONE);
+    super();
 
     IBlockState defaultState = this.blockState.getBaseState().withProperty(North, false).withProperty(East, false)
         .withProperty(South, false).withProperty(West, false);
