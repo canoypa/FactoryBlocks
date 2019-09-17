@@ -2,9 +2,29 @@
   "multipart": [
     { "apply": { "model": "factoryblocks:catwalks_footing" } },
 
-    { "when": { "north": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "uvlock": true } },
-    { "when": { "east": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 90, "uvlock": true } },
-    { "when": { "south": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 180, "uvlock": true } },
-    { "when": { "west": "false" }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 270, "uvlock": true } }
+    { "when": { "north": false }, "apply": { "model": "factoryblocks:catwalks_handrail", "uvlock": true } },
+    { "when": { "east": false }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 90, "uvlock": true } },
+    { "when": { "south": false }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 180, "uvlock": true } },
+    { "when": { "west": false }, "apply": { "model": "factoryblocks:catwalks_handrail", "y": 270, "uvlock": true } },
+
+    { "when": { "north": false, "east": true, "west": true }, "apply": { "model": "factoryblocks:catwalks_cover_full", "uvlock": true } },
+    { "when": { "east": false, "south": true, "north": true }, "apply": { "model": "factoryblocks:catwalks_cover_full", "y": 90, "uvlock": true } },
+    { "when": { "south": false, "west": true, "east": true }, "apply": { "model": "factoryblocks:catwalks_cover_full", "y": 180, "uvlock": true } },
+    { "when": { "west": false, "north": true, "south": true }, "apply": { "model": "factoryblocks:catwalks_cover_full", "y": 270, "uvlock": true } },
+
+    { "when": { "north": false, "east": true }, "apply": { "model": "factoryblocks:catwalks_cover_right", "uvlock": true } },
+    { "when": { "east": false, "south": true }, "apply": { "model": "factoryblocks:catwalks_cover_right", "y": 90, "uvlock": true } },
+    { "when": { "south": false, "west": true }, "apply": { "model": "factoryblocks:catwalks_cover_right", "y": 180, "uvlock": true } },
+    { "when": { "west": false, "north": true }, "apply": { "model": "factoryblocks:catwalks_cover_right", "y": 270, "uvlock": true } },
+
+    { "when": { "north": false, "west": true }, "apply": { "model": "factoryblocks:catwalks_cover_left", "uvlock": true } },
+    { "when": { "east": false, "north": true }, "apply": { "model": "factoryblocks:catwalks_cover_left", "y": 90, "uvlock": true } },
+    { "when": { "south": false, "east": true }, "apply": { "model": "factoryblocks:catwalks_cover_left", "y": 180, "uvlock": true } },
+    { "when": { "west": false, "south": true }, "apply": { "model": "factoryblocks:catwalks_cover_left", "y": 270, "uvlock": true } },
+
+    { "when": { "north": false, "east": false, "west": false }, "apply": { "model": "factoryblocks:catwalks_cover", "uvlock": true } },
+    { "when": { "east": false, "south": false, "north": false }, "apply": { "model": "factoryblocks:catwalks_cover", "y": 90, "uvlock": true } },
+    { "when": { "south": false, "west": false, "east": false }, "apply": { "model": "factoryblocks:catwalks_cover", "y": 180, "uvlock": true } },
+    { "when": { "west": false, "north": false, "south": false }, "apply": { "model": "factoryblocks:catwalks_cover", "y": 270, "uvlock": true } }
   ]
 }
