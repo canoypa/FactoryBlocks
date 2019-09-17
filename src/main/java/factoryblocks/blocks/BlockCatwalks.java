@@ -20,10 +20,10 @@ public class BlockCatwalks extends Block {
 
   // 当たり判定のサイズ
   private static final AxisAlignedBB MainHitBox = AxisAligned.create(0, 0, 0, 16, 1, 16);
-  private static final AxisAlignedBB NorthHitBox = AxisAligned.create(0, 0, 0, 16, 20, 1);
-  private static final AxisAlignedBB EastHitBox = AxisAligned.create(15, 0, 0, 1, 20, 16);
-  private static final AxisAlignedBB SouthHitBox = AxisAligned.create(0, 0, 15, 16, 20, 1);
-  private static final AxisAlignedBB WestHitBox = AxisAligned.create(0, 0, 0, 1, 20, 16);
+  private static final AxisAlignedBB NorthHitBox = AxisAligned.create(0, 0, 0, 16, 16, 1);
+  private static final AxisAlignedBB EastHitBox = AxisAligned.create(15, 0, 0, 1, 16, 16);
+  private static final AxisAlignedBB SouthHitBox = AxisAligned.create(0, 0, 15, 16, 16, 1);
+  private static final AxisAlignedBB WestHitBox = AxisAligned.create(0, 0, 0, 1, 16, 16);
 
   // ブロックのステータスプロパティ
   private static final PropertyBool North = PropertyBool.create("north");
