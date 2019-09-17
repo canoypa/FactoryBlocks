@@ -30,10 +30,6 @@ public class BlockCatwalks extends Block {
   private static final PropertyBool East = PropertyBool.create("east");
   private static final PropertyBool South = PropertyBool.create("south");
   private static final PropertyBool West = PropertyBool.create("west");
-  private static final PropertyBool AscendingNorth = PropertyBool.create("ascending_worth");
-  private static final PropertyBool AscendingEast = PropertyBool.create("ascending_wast");
-  private static final PropertyBool AscendingSouth = PropertyBool.create("ascending_wouth");
-  private static final PropertyBool AscendingWest = PropertyBool.create("ascending_west");
 
   public BlockCatwalks() {
     super(Material.IRON);
@@ -41,8 +37,7 @@ public class BlockCatwalks extends Block {
     setSoundType(SoundType.STONE);
 
     IBlockState defaultState = this.blockState.getBaseState().withProperty(North, false).withProperty(East, false)
-        .withProperty(South, false).withProperty(West, false).withProperty(AscendingNorth, false)
-        .withProperty(AscendingEast, false).withProperty(AscendingSouth, false).withProperty(AscendingWest, false);
+        .withProperty(South, false).withProperty(West, false);
 
     this.setDefaultState(defaultState);
   }
@@ -102,8 +97,7 @@ public class BlockCatwalks extends Block {
   // blockstate
   @Override
   protected BlockStateContainer createBlockState() {
-    return new BlockStateContainer(this,
-        new IProperty[] { North, East, West, South, AscendingNorth, AscendingEast, AscendingSouth, AscendingWest });
+    return new BlockStateContainer(this, new IProperty[] { North, East, West, South });
   }
 
 }
