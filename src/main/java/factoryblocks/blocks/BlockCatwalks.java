@@ -38,11 +38,6 @@ public class BlockCatwalks extends BlockCatwalksBase {
     this.setDefaultState(defaultState);
   }
 
-  // ブロックが catwalks かどうか
-  private boolean isCatwalks(Block block) {
-    return block == this;
-  }
-
   // ブロック設置時
   @Override
   public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
@@ -63,16 +58,6 @@ public class BlockCatwalks extends BlockCatwalksBase {
         .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest));
   }
 
-  @Override
-  public boolean isFullCube(IBlockState state) {
-    return false;
-  }
-
-  @Override
-  public boolean isOpaqueCube(IBlockState state) {
-    return false;
-  }
-
   // 当たり判定のやつ
   @Override
   public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
@@ -83,11 +68,6 @@ public class BlockCatwalks extends BlockCatwalksBase {
   @Override
   public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
     return BoundingBox;
-  }
-
-  @Override
-  public int getMetaFromState(IBlockState state) {
-    return 0;
   }
 
   // blockstate
