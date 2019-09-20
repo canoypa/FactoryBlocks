@@ -5,6 +5,8 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.EnumFacing;
 
 public class BlockCatwalksStairs extends BlockCatwalksBase {
 
@@ -15,6 +17,11 @@ public class BlockCatwalksStairs extends BlockCatwalksBase {
 
   public BlockCatwalksStairs() {
     super();
+
+    final IBlockState defaultState = this.getDefaultState().withProperty(Facing, EnumFacing.NORTH)
+        .withProperty(Ascending, false).withProperty(Descent, false);
+
+    this.setDefaultState(defaultState);
   }
 
   // blockstate
