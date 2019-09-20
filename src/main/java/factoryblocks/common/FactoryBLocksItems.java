@@ -17,7 +17,9 @@ public class FactoryBLocksItems {
 
   public static final void registerItemBlocks(IForgeRegistry<Item> registry) {
     final Item[] blockItems = {
-        new ItemBlock(FactoryBlocksBlocks.catwalks).setRegistryName(FactoryBlocksBlocks.catwalks.getRegistryName()) };
+        new ItemBlock(FactoryBlocksBlocks.catwalks).setRegistryName(FactoryBlocksBlocks.catwalks.getRegistryName()),
+        new ItemBlock(FactoryBlocksBlocks.catwalksStairs)
+            .setRegistryName(FactoryBlocksBlocks.catwalksStairs.getRegistryName()) };
 
     registry.registerAll(blockItems);
   }
