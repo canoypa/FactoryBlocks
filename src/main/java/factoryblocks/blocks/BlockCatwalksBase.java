@@ -15,7 +15,7 @@ public class BlockCatwalksBase extends Block {
 
   // ブロックが catwalks かどうか
   protected boolean isCatwalks(Block block) {
-    return block == this;
+    return block instanceof BlockCatwalksBase;
   }
 
   @Override
