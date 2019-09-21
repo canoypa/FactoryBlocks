@@ -28,6 +28,10 @@ public class BlockCatwalks extends BlockCatwalksBase {
   private static final PropertyBool East = PropertyBool.create("east");
   private static final PropertyBool South = PropertyBool.create("south");
   private static final PropertyBool West = PropertyBool.create("west");
+  private static final PropertyBool NorthEast = PropertyBool.create("north_east");
+  private static final PropertyBool NorthWest = PropertyBool.create("north_west");
+  private static final PropertyBool SouthEast = PropertyBool.create("south_east");
+  private static final PropertyBool SouthWest = PropertyBool.create("south_west");
 
   public BlockCatwalks() {
     super();
@@ -53,9 +57,17 @@ public class BlockCatwalks extends BlockCatwalksBase {
     Block blockEast = world.getBlockState(pos.east()).getBlock();
     Block blockSouth = world.getBlockState(pos.south()).getBlock();
     Block blockWest = world.getBlockState(pos.west()).getBlock();
+    Block blockNorthEast = world.getBlockState(pos.north().east()).getBlock();
+    Block blockNorthWest = world.getBlockState(pos.north().west()).getBlock();
+    Block blockSouthEast = world.getBlockState(pos.south().east()).getBlock();
+    Block blockSouthWest = world.getBlockState(pos.south().west()).getBlock();
 
     return state.withProperty(North, this.isCatwalks(blockNorth)).withProperty(East, this.isCatwalks(blockEast))
-        .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest));
+        .withProperty(South, this.isCatwalks(blockSouth)).withProperty(West, this.isCatwalks(blockWest))
+        .withProperty(NorthEast, this.isCatwalks(blockNorthEast))
+        .withProperty(NorthWest, this.isCatwalks(blockNorthWest))
+        .withProperty(SouthEast, this.isCatwalks(blockSouthEast))
+        .withProperty(SouthWest, this.isCatwalks(blockSouthWest));
   }
 
   // 当たり判定のやつ
@@ -73,7 +85,8 @@ public class BlockCatwalks extends BlockCatwalksBase {
   // blockstate
   @Override
   protected BlockStateContainer createBlockState() {
-    return new BlockStateContainer(this, new IProperty[] { North, East, West, South });
+    return new BlockStateContainer(this,
+        new IProperty[] { North, East, West, South, NorthEast, NorthWest, SouthEast, SouthWest });
   }
 
 }
