@@ -16,8 +16,8 @@ public class EventBusFactoryBlocks {
 
   @SubscribeEvent
   public void registerItems(Register<Item> event) {
-    FactoryBLocksItems.registerItems(event.getRegistry());
-    FactoryBLocksItems.registerItemBlocks(event.getRegistry());
+    FactoryBlocksItems.registerItems(event.getRegistry());
+    FactoryBlocksItems.registerItemBlocks(event.getRegistry());
   }
 
   @SubscribeEvent

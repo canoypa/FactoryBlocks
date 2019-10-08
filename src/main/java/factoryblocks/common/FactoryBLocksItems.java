@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @ObjectHolder(FactoryBlocks.MODID)
-public class FactoryBLocksItems {
+public class FactoryBlocksItems {
 
   public static final void registerItems(IForgeRegistry<Item> registry) {
     final Item[] items = {};
