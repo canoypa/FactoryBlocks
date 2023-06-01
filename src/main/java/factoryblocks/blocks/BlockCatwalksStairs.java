@@ -1,5 +1,6 @@
 package factoryblocks.blocks;
 
+import factoryblocks.common.FactoryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.IProperty;
@@ -46,6 +47,23 @@ public class BlockCatwalksStairs extends BlockCatwalksBase {
 
   @Override
   public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
+    final Block AscendingBlock;
+    final Block DescentBlock;
+
+    if (state.getValue(Facing) == EnumFacing.NORTH) {
+      AscendingBlock = world.getBlockState(pos.north().up()).getBlock();
+      DescentBlock = world.getBlockState(pos.south()).getBlock();
+    } else if (state.getValue(Facing) == EnumFacing.EAST) {
+      AscendingBlock = world.getBlockState(pos.east().up()).getBlock();
+      DescentBlock = world.getBlockState(pos.west()).getBlock();
+    } else if (state.getValue(Facing) == EnumFacing.SOUTH) {
+      AscendingBlock = world.getBlockState(pos.south().up()).getBlock();
+      DescentBlock = world.getBlockState(pos.north()).getBlock();
+    } else if (state.getValue(Facing) == EnumFacing.WEST) {
+      AscendingBlock = world.getBlockState(pos.west().up()).getBlock();
+      DescentBlock = world.getBlockState(pos.east()).getBlock();
+    }
+
     // Block blockNorth = world.getBlockState(pos.north()).getBlock();
 
     return state.withProperty(Ascending, false).withProperty(Descent, false);

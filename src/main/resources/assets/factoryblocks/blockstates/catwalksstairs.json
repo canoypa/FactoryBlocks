@@ -1,0 +1,8 @@
+{
+  "multipart": [
+    { "when": { "facing": "north" }, "apply": { "model": "factoryblocks:catwalks_stairs.obj", "uvlock": true } },
+    { "when": { "facing": "east" }, "apply": { "model": "factoryblocks:catwalks_stairs.obj", "y": 90, "uvlock": true } },
+    { "when": { "facing": "south" }, "apply": { "model": "factoryblocks:catwalks_stairs.obj", "y": 180, "uvlock": true } },
+    { "when": { "facing": "west" }, "apply": { "model": "factoryblocks:catwalks_stairs.obj", "y": 270, "uvlock": true } }
+  ]
+}
